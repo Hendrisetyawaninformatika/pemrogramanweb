@@ -2,110 +2,180 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Portofolio Hendri</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Hendri</title>
 
     <style>
-        body {
-            font-family: Arial;
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f4f4;
         }
 
         header {
-            background: #333;
+            background: #222;
             color: white;
-            padding: 15px;
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         nav a {
             color: white;
-            margin-right: 15px;
+            margin-left: 20px;
             text-decoration: none;
+            transition: 0.3s;
         }
 
-        .container {
-            padding: 20px;
+        nav a:hover {
+            color: #00adb5;
         }
 
-        img.profile {
-            width: 120px;
+        section {
+            padding: 60px 50px;
+        }
+
+        .hero {
+            text-align: center;
+            background: white;
+        }
+
+        .hero img {
+            width: 130px;
             border-radius: 50%;
+            margin-bottom: 15px;
         }
 
-        .projects img {
-            width: 150px;
-            margin: 5px;
+        .hero h2 {
+            margin-bottom: 10px;
         }
 
-        .projects {
+        .skills, .projects, .contact {
+            background: white;
+            margin-top: 20px;
+            border-radius: 10px;
+            padding: 30px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        ul li {
+            background: #eee;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+
+        .project-images {
             display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .project-images img {
+            width: 200px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .project-images img:hover {
+            transform: scale(1.05);
         }
 
         form input, form textarea {
-            display: block;
-            margin-bottom: 10px;
-            width: 300px;
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form input[type="submit"] {
+            background: #00adb5;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        form input[type="submit"]:hover {
+            background: #007b80;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #222;
+            color: white;
+            margin-top: 20px;
         }
     </style>
 </head>
 
 <body>
 
-<!-- HEADER + NAV -->
 <header>
-    <h1>Welcome to My Portfolio</h1>
+    <h1>Hendri Setyawan Portfolio</h1>
     <nav>
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
+        <a href="#home">Home</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
     </nav>
 </header>
 
-<div class="container">
-
-    <!-- PROFILE -->
+<section class="hero" id="home">
+    <img src="https://1drv.ms/i/c/d572a64678616def/IQAsppd1vjR3Qp-hOAo6YEtCAbkjB6nJcMI1LZewRr1-7QU?e=p1LM0M">
     <h2>Hendri Setyawan</h2>
-    <img src="https://1drv.ms/i/c/d572a64678616def/IQAsppd1vjR3Qp-hOAo6YEtCAbkjB6nJcMI1LZewRr1-7QU?e=p1LM0M" class="profile">
-    <p>Hi, I'm Hendri, a beginner web developer.</p>
+    <p>Beginner Web Developer</p>
+</section>
 
-    <!-- SKILLS -->
-    <h3>Skills</h3>
+<section class="skills" id="skills">
+    <h2>Skills</h2>
     <ul>
         <li>HTML</li>
         <li>CSS</li>
         <li>JavaScript</li>
     </ul>
+</section>
 
-    <!-- PROJECTS -->
-    <h3>Projects</h3>
+<section class="projects" id="projects">
+    <h2>Projects</h2>
     <ul>
         <li>Sistem Informasi</li>
         <li>Website Akademik</li>
         <li>Website Perusahaan</li>
     </ul>
 
-    <div class="projects">
+    <div class="project-images">
         <img src="https://www.pro.co.id/wp-content/uploads/2016/06/jenis-sistem-informasi.jpg">
         <img src="https://1.bp.blogspot.com/-78-_6O9ZfBY/YOTC7E5EkJI/AAAAAAAAcpY/Y42gYA8j1Hg69wNZfQwQORmQ7h7cHaEyQCLcBGAsYHQ/w0/sistem%2Binformasi%2Bakademik.jpeg">
         <img src="https://nore.web.id/wp-content/uploads/2022/06/screencapture-nore-web-id-desain-website-nore-perusahaan-1-2022-06-21-14_39_00-e1655797480779-768x885.png">
     </div>
+</section>
 
-    <!-- CONTACT FORM -->
-    <h3>Contact</h3>
+<section class="contact" id="contact">
+    <h2>Contact</h2>
 
     <form>
-        <label>Nama:</label>
-        <input type="text" required>
-
-        <label>Email:</label>
-        <input type="email" required>
-
-        <label>Pesan:</label>
-        <textarea rows="4" required></textarea>
-
+        <input type="text" placeholder="Nama" required>
+        <input type="email" placeholder="Email" required>
+        <textarea rows="4" placeholder="Pesan" required></textarea>
         <input type="submit" value="Kirim">
     </form>
+</section>
 
-</div>
+<footer>
+    <p>© 2026 Hendri Portfolio</p>
+</footer>
 
 </body>
 </html>
