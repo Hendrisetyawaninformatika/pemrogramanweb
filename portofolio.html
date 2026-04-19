@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Portofolio Hendri</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 0;
+        }
+
+        header {
+            background: #333;
+            color: white;
+            padding: 15px;
+        }
+
+        nav a {
+            color: white;
+            margin-right: 15px;
+            text-decoration: none;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        img.profile {
+            width: 120px;
+            border-radius: 50%;
+        }
+
+        .projects img {
+            width: 150px;
+            margin: 5px;
+        }
+
+        .projects {
+            display: flex;
+        }
+
+        form input, form textarea {
+            display: block;
+            margin-bottom: 10px;
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- HEADER + NAV -->
+<header>
+    <h1>Welcome to My Portfolio</h1>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+</header>
+
+<div class="container">
+
+    <!-- PROFILE -->
+    <h2>Hendri Setyawan</h2>
+    <img src="https://1drv.ms/i/c/d572a64678616def/IQAsppd1vjR3Qp-hOAo6YEtCAbkjB6nJcMI1LZewRr1-7QU?e=p1LM0M" class="profile">
+    <p>Hi, I'm Hendri, a beginner web developer.</p>
+
+    <!-- SKILLS -->
+    <h3>Skills</h3>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+
+    <!-- PROJECTS -->
+    <h3>Projects</h3>
+    <ul>
+        <li>Sistem Informasi</li>
+        <li>Website Akademik</li>
+        <li>Website Perusahaan</li>
+    </ul>
+
+    <div class="projects">
+        <img src="https://www.pro.co.id/wp-content/uploads/2016/06/jenis-sistem-informasi.jpg">
+        <img src="https://1.bp.blogspot.com/-78-_6O9ZfBY/YOTC7E5EkJI/AAAAAAAAcpY/Y42gYA8j1Hg69wNZfQwQORmQ7h7cHaEyQCLcBGAsYHQ/w0/sistem%2Binformasi%2Bakademik.jpeg">
+        <img src="https://nore.web.id/wp-content/uploads/2022/06/screencapture-nore-web-id-desain-website-nore-perusahaan-1-2022-06-21-14_39_00-e1655797480779-768x885.png">
+    </div>
+
+    <!-- CONTACT FORM -->
+    <h3>Contact</h3>
+
+    <form>
+        <label>Nama:</label>
+        <input type="text" required>
+
+        <label>Email:</label>
+        <input type="email" required>
+
+        <label>Pesan:</label>
+        <textarea rows="4" required></textarea>
+
+        <input type="submit" value="Kirim">
+    </form>
+
+</div>
+
+</body>
+</html>
