@@ -61,18 +61,16 @@ body {
     padding: 0.5em 1em;
     border: none;
     border-radius: 0.5em;
-    background-color: #3f22ff;
+    background-color: #ff2247;
     color: white;
     cursor: pointer;
 }
 
 .car-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    grid-template-columns: repeat(3, 2fr); /* 3 kolom */
     gap: 1.5em;
-    align-content: center;
     padding: 2em 1em;
-    align-items: start;
     max-width: 80rem;
     margin: 0 auto;
 }
@@ -82,6 +80,7 @@ body {
     margin: 2em 0;
     grid-column: 1 / -1;
     text-align: center;
+    
 }
 
 .car-item {
@@ -97,3 +96,82 @@ body {
     height: auto;
     object-fit: cover;
 }
+/* ===== NAVBAR & FOTO PROFIL ===== */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 2em;
+    background-color: #b8e30a;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5em;
+    margin: 1;
+}
+
+nav ul li a {
+    color: rgb(19, 15, 207);
+    text-decoration: none;
+}
+
+/* FOTO + NAMA */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+}
+
+.logo img {
+    width: 140px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.car-item button {
+    background-color: #25D366;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.car-item button:hover {
+    background-color: #1ebe5d;
+    transform: scale(1.05);
+}
+/* FLOATING WHATSAPP */
+.wa-chat {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background: linear-gradient(45deg, #25D366, #1ebe5d);
+    color: white;
+    padding: 12px 18px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: 0.3s;
+    z-index: 1000;
+}
+
+.wa-chat i {
+    font-size: 20px;
+}
+
+.wa-chat:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
