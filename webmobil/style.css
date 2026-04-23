@@ -14,7 +14,7 @@ body {
 }
 
 .title {
-    color: rgb(174, 22, 22);
+    color: rgb(22, 174, 32);
     text-align: center;
 }
 
@@ -31,7 +31,7 @@ body {
 .title hr {
     width: 50em;
     max-width: 90vw;
-    border: 1px solid rgb(219, 21, 21);
+    border: 1px solid rgb(21, 219, 156);
     margin: 3em auto;
     opacity: 0.5;
 }
@@ -43,7 +43,7 @@ body {
     align-items: center;
     padding: 3em;
     border-radius: 1em;
-    color: white;
+    color: rgb(255, 255, 255);
     gap: 2em;
 }
 
@@ -61,7 +61,7 @@ body {
     padding: 0.5em 1em;
     border: none;
     border-radius: 0.5em;
-    background-color: #ff5722;
+    background-color: #3f22ff;
     color: white;
     cursor: pointer;
 }
