@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Koleksi Mobil | HYUNDAI BATANG</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -33,6 +33,7 @@
             <p>Temukan mobil impian Anda dari berbagai pilihan</p>
         </section>
 
+        <!-- FILTER BUTTONS -->
         <div class="filter-bar">
             <button class="filter-btn active" data-category="all">Semua</button>
             <button class="filter-btn" data-category="suv">SUV</button>
@@ -41,7 +42,9 @@
             <button class="filter-btn" data-category="mpv">MPV</button>
         </div>
 
+        <!-- INVENTORY GRID - setiap mobil punya data-category -->
         <section class="inventory-grid" id="inventoryGrid">
+            <!-- SUV -->
             <div class="car-item" data-category="suv">
                 <img src="https://media.cdntoyota.co.za/toyotacms23/attachments/cldd4dd3a01gu0psx0wnbyh1i-fortuner-exterior-front-34-high-turn-1920x1080.desktop.jpg" alt="Toyota Fortuner">
                 <div class="car-info">
@@ -56,6 +59,7 @@
                 </div>
             </div>
 
+            <!-- SUV -->
             <div class="car-item" data-category="suv">
                 <img src="https://www.honda.ca/-/media/Brands/Honda/Models/HR-V/2026/1-Overview/2-Key-Features/MY26_HRV_EXL_AWD_NFP_1036x520_Desktop_OverviewKeyFeatures.png?h=1040&iar=0&w=2072&rev=44881539a04c4c599216962f0571a0f8&hash=55A954223C7E5D076B5C3FC7237F8840" alt="Honda CR-V">
                 <div class="car-info">
@@ -70,34 +74,7 @@
                 </div>
             </div>
 
-            <div class="car-item" data-category="mpv">
-                <img src="https://s1.cdn.autoevolution.com/images/news/gallery/2023-mitsubishi-pajero-sport-is-the-same-but-different_1.jpg" alt="Mitsubishi Pajero">
-                <div class="car-info">
-                    <h3>Mitsubishi Pajero Sport</h3>
-                    <p class="year">Tahun 2022 | Bekas | MPV</p>
-                    <p class="specs">2.4L Diesel | AT | 7 Kursi</p>
-                    <div class="price-large">Rp 620.000.000</div>
-                    <div class="button-group">
-                        <a href="detail-pajero.html" class="btn detail">Detail</a>
-                        <a href="https://wa.me/6281248141031?text=Halo%20saya%20tertarik%20dengan%20Mitsubishi%20Pajero" class="btn order">Order</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="car-item" data-category="sedan">
-                <img src="https://www.renderhub.com/squir/toyota-camry-hybrid-2025/toyota-camry-hybrid-2025-02.jpg" alt="Toyota Camry">
-                <div class="car-info">
-                    <h3>Toyota Camry Hybrid</h3>
-                    <p class="year">Tahun 2024 | Baru | Sedan</p>
-                    <p class="specs">2.5L Hybrid | E-CVT | 5 Kursi</p>
-                    <div class="price-large">Rp 780.000.000</div>
-                    <div class="button-group">
-                        <a href="detail-camry.html" class="btn detail">Detail</a>
-                        <a href="https://wa.me/6281248141031?text=Halo%20saya%20tertarik%20dengan%20Toyota%20Camry" class="btn order">Order</a>
-                    </div>
-                </div>
-            </div>
-
+            <!-- SUV -->
             <div class="car-item" data-category="suv">
                 <img src="https://images.carexpert.com.au/resize/3000/-/app/uploads/2023/01/Suzuki-Jimny-5-Door0469457_8441c4233c_o.jpg" alt="Suzuki Jimny">
                 <div class="car-info">
@@ -112,6 +89,37 @@
                 </div>
             </div>
 
+            <!-- Sedan -->
+            <div class="car-item" data-category="sedan">
+                <img src="https://images.dealer.com/ddc/vehicles/2022/Toyota/Camry%20Hybrid/Sedan/perspective/front-left/2022_24.png" alt="Toyota Camry">
+                <div class="car-info">
+                    <h3>Toyota Camry Hybrid</h3>
+                    <p class="year">Tahun 2024 | Baru | Sedan</p>
+                    <p class="specs">2.5L Hybrid | E-CVT | 5 Kursi</p>
+                    <div class="price-large">Rp 780.000.000</div>
+                    <div class="button-group">
+                        <a href="detail-camry.html" class="btn detail">Detail</a>
+                        <a href="https://wa.me/6281248141031?text=Halo%20saya%20tertarik%20dengan%20Toyota%20Camry" class="btn order">Order</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MPV -->
+            <div class="car-item" data-category="mpv">
+                <img src="https://s1.cdn.autoevolution.com/images/news/gallery/2023-mitsubishi-pajero-sport-is-the-same-but-different_1.jpg" alt="Mitsubishi Pajero">
+                <div class="car-info">
+                    <h3>Mitsubishi Pajero Sport</h3>
+                    <p class="year">Tahun 2022 | Bekas | MPV</p>
+                    <p class="specs">2.4L Diesel | AT | 7 Kursi</p>
+                    <div class="price-large">Rp 620.000.000</div>
+                    <div class="button-group">
+                        <a href="detail-pajero.html" class="btn detail">Detail</a>
+                        <a href="https://wa.me/6281248141031?text=Halo%20saya%20tertarik%20dengan%20Mitsubishi%20Pajero" class="btn order">Order</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hatchback -->
             <div class="car-item" data-category="hatchback">
                 <img src="https://www.indiacarnews.com/wp-content/uploads/2022/12/Hyundai-Ioniq-5-Specs.jpg" alt="Hyundai Ioniq">
                 <div class="car-info">
@@ -142,7 +150,9 @@
         <p>&copy; 2026 HYUNDAI BATANG - Showroom Mobil Terpercaya | UTS Pemrograman Web</p>
     </footer>
 
+    <!-- JAVASCRIPT UNTUK FILTER (INI YANG PENTING!) -->
     <script>
+        // Menu toggle untuk mobile
         const menuToggle = document.getElementById('menuToggle');
         const nav = document.querySelector('nav');
         if (menuToggle) {
@@ -150,6 +160,64 @@
                 nav.classList.toggle('show');
             });
         }
-        
+
+        // ========== FILTER MOBIL ==========
+        // Ambil semua tombol filter
         const filterButtons = document.querySelectorAll('.filter-btn');
-        const carItems = document.querySelectorAll
+        // Ambil semua item mobil
+        const carItems = document.querySelectorAll('.car-item');
+        // Ambil elemen pesan jika tidak ada hasil
+        const noResult = document.getElementById('noResult');
+
+        // Fungsi untuk memfilter mobil
+        function filterCars(category) {
+            let visibleCount = 0;
+            
+            carItems.forEach(item => {
+                // Ambil kategori dari atribut data-category
+                const itemCategory = item.getAttribute('data-category');
+                
+                // Jika category = 'all' atau sama dengan kategori item, tampilkan
+                if (category === 'all' || itemCategory === category) {
+                    item.style.display = 'flex';  // tampilkan (flex karena pakai flexbox)
+                    visibleCount++;
+                } else {
+                    item.style.display = 'none';   // sembunyikan
+                }
+            });
+
+            // Tampilkan pesan jika tidak ada mobil yang muncul
+            if (visibleCount === 0) {
+                noResult.style.display = 'block';
+            } else {
+                noResult.style.display = 'none';
+            }
+        }
+
+        // Tambahkan event listener ke setiap tombol filter
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Hapus class 'active' dari semua tombol
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Tambah class 'active' ke tombol yang diklik
+                this.classList.add('active');
+                
+                // Ambil kategori dari atribut data-category
+                const category = this.getAttribute('data-category');
+                // Jalankan filter
+                filterCars(category);
+            });
+        });
+
+        // Set active menu berdasarkan halaman saat ini
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            const linkPage = link.getAttribute('href');
+            if (linkPage === currentPage) {
+                link.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>
