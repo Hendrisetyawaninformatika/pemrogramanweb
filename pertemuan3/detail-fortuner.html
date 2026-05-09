@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Toyota Fortuner | HYUNDAI BATANG</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Tambahan CSS khusus untuk halaman detail */
+        .detail-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #1a3c5e;
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            transition: all 0.3s;
+        }
+
+        .back-btn:hover {
+            background: #E67E22;
+            transform: translateX(-5px);
+        }
+
+        .detail-content {
+            display: flex;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .detail-image {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .detail-image img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .detail-info {
+            flex: 1;
+        }
+
+        .detail-info h2 {
+            font-size: 2rem;
+            color: #1a3c5e;
+            margin-bottom: 0.5rem;
+        }
+
+        .detail-year {
+            color: #666;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .detail-price {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #E67E22;
+            margin: 1rem 0 1.5rem 0;
+            padding: 0.5rem 0;
+            border-top: 2px solid #f0f0f0;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .detail-info h3 {
+            color: #1a3c5e;
+            margin: 1.5rem 0 0.8rem 0;
+            font-size: 1.3rem;
+        }
+
+        .detail-info ul {
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+
+        .detail-info ul li {
+            margin: 0.5rem 0;
+            line-height: 1.6;
+        }
+
+        .btn.primary {
+            display: inline-block;
+            background: #E67E22;
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .btn.primary:hover {
+            background: #D35400;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(230,126,34,0.3);
+        }
+
+        @media (max-width: 768px) {
+            .detail-container {
+                padding: 1rem;
+            }
+            
+            .detail-info h2 {
+                font-size: 1.5rem;
+            }
+            
+            .detail-price {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <div class="logo-icon">🚗</div>
+            <div class="logo-text">
+                <h1>HYUNDAI BATANG</h1>
+                <p>Your Trusted Car Dealer</p>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav-link">🏠 Home</a></li>
+                <li><a href="about.html" class="nav-link">📖 About</a></li>
+                <li><a href="inventory.html" class="nav-link">📦 Inventory</a></li>
+            </ul>
+        </nav>
+        <div class="menu-toggle" id="menuToggle">
+            <span>☰</span>
+        </div>
+    </header>
+
+    <main>
+        <div class="detail-container">
+            <a href="inventory.html" class="back-btn">
+                ← Kembali ke Inventory
+            </a>
+            
+            <div class="detail-content">
+                <div class="detail-image">
+                    <img src="https://radarseluma.disway.id/upload/fff87a11c0164af927268a9514016f7e.jpg" alt="Toyota Fortuner">
+                </div>
+                
+                <div class="detail-info">
+                    <h2>Toyota Fortuner VRZ 4x4</h2>
+                    <p class="detail-year">Tahun 2023 | Bekas | SUV</p>
+                    <div class="detail-price">Rp 585.000.000</div>
+                    
+                    <h3>📋 Spesifikasi:</h3>
+                    <ul>
+                        <li><strong>Mesin:</strong> 2.8L 4-Cylinder Turbo Diesel</li>
+                        <li><strong>Transmisi:</strong> Automatic 6-Speed</li>
+                        <li><strong>Kapasitas:</strong> 7 Kursi</li>
+                        <li><strong>Fitur:</strong> 4x4, Sunroof, Kamera 360°</li>
+                        <li><strong>Kilometer:</strong> 15.000 km</li>
+                        <li><strong>Warna:</strong> Hitam Metalik</li>
+                    </ul>
+                    
+                    <h3>⭐ Keunggulan:</h3>
+                    <ul>
+                        <li>✅ Free service 1 tahun</li>
+                        <li>✅ Garansi mesin 3 bulan</li>
+                        <li>✅ Bisa kredit dengan DP ringan</li>
+                        <li>✅ Free test drive di tempat</li>
+                    </ul>
+                    
+                    <h3>📍 Lokasi Showroom:</h3>
+                    <ul>
+                        <li>Jl. Raya Permata No. 123, Batang</li>
+                        <li>Buka Senin-Sabtu: 09.00 - 18.00</li>
+                    </ul>
+                    
+                    <a href="https://wa.me/6281248141031?text=Halo%20saya%20tertarik%20dengan%20Toyota%20Fortuner%20VRZ%204x4%20harga%20Rp%20585.000.000" class="btn primary">
+                        💬 Beli Sekarang via WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 HYUNDAI BATANG - Showroom Mobil Terpercaya | UTS Pemrograman Web</p>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const nav = document.querySelector('nav');
+        
+        if (menuToggle) {
+            menuToggle.addEventListener('click', function() {
+                nav.classList.toggle('show');
+            });
+        }
+        
+        // Set active menu berdasarkan halaman saat ini
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        navLinks.forEach(link => {
+            const linkPage = link.getAttribute('href');
+            if (linkPage === currentPage) {
+                link.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>
