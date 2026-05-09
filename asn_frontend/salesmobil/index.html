@@ -3,29 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AutoPrime - Showroom Mobil Terpercaya</title>
+    <title>HYUNDAI BATANG - Showroom Mobil Terpercaya</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-    <div class="logo">
-        <div class="logo-icon">H</div>
-        <div class="logo-text">
-            <h1>HYUNDAI BATANG</h1>
-            <p>Your Trusted Car Dealer</p>
+        <div class="logo">
+            <div class="logo-icon">H</div>
+            <div class="logo-text">
+                <h1>HYUNDAI BATANG</h1>
+                <p>Your Trusted Car Dealer</p>
+            </div>
         </div>
-    </div>
-    <nav>
-        <ul>
-            <li><a href="index.html" class="nav-link">🏠 Home</a></li>
-            <li><a href="about.html" class="nav-link">📖 About</a></li>
-            <li><a href="inventory.html" class="nav-link">📦 Inventory</a></li>
-        </ul>
-    </nav>
-    <div class="menu-toggle" id="menuToggle">
-        <span>☰</span>
-    </div>
-</header>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav-link">🏠 Home</a></li>
+                <li><a href="about.html" class="nav-link">📖 About</a></li>
+                <li><a href="inventory.html" class="nav-link">📦 Inventory</a></li>
+            </ul>
+        </nav>
+        <div class="menu-toggle" id="menuToggle">
+            <span>☰</span>
+        </div>
+    </header>
 
     <main>
         <section class="hero">
@@ -69,21 +69,21 @@
                     <h3>Toyota Fortuner 2023</h3>
                     <p>Bekas - Kondisi mulus, low mileage</p>
                     <div class="price">Rp 550.000.000</div>
-                    <a href="inventory.html" class="btn small">Detail</a>
+                    <a href="detail-fortuner.html" class="btn small">Detail</a>
                 </div>
                 <div class="car-card">
                     <img src="https://www.honda.ca/-/media/Brands/Honda/Models/HR-V/2026/1-Overview/2-Key-Features/MY26_HRV_EXL_AWD_NFP_1036x520_Desktop_OverviewKeyFeatures.png?h=1040&iar=0&w=2072&rev=44881539a04c4c599216962f0571a0f8&hash=55A954223C7E5D076B5C3FC7237F8840" alt="Honda HR-V">
                     <h3>Honda HR-V 2024</h3>
                     <p>Baru - Free service 3 tahun</p>
                     <div class="price">Rp 380.000.000</div>
-                    <a href="inventory.html" class="btn small">Detail</a>
+                    <a href="detail-crv.html" class="btn small">Detail</a>
                 </div>
                 <div class="car-card">
                     <img src="https://s1.cdn.autoevolution.com/images/news/gallery/2023-mitsubishi-pajero-sport-is-the-same-but-different_1.jpg" alt="Mitsubishi Pajero">
                     <h3>Mitsubishi Pajero 2022</h3>
                     <p>Bekas - Turbo diesel, 4x4</p>
                     <div class="price">Rp 620.000.000</div>
-                    <a href="inventory.html" class="btn small">Detail</a>
+                    <a href="detail-pajero.html" class="btn small">Detail</a>
                 </div>
             </div>
         </section>
@@ -99,7 +99,25 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 AutoPrime - Showroom Mobil Terpercaya | UTS Pemrograman Web</p>
+        <p>&copy; 2026 HYUNDAI BATANG - Showroom Mobil Terpercaya | UTS Pemrograman Web</p>
     </footer>
+
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const nav = document.querySelector('nav');
+        if (menuToggle) {
+            menuToggle.addEventListener('click', function() {
+                nav.classList.toggle('show');
+            });
+        }
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            const linkPage = link.getAttribute('href');
+            if (linkPage === currentPage) {
+                link.classList.add('active');
+            }
+        });
+    </script>
 </body>
 </html>
