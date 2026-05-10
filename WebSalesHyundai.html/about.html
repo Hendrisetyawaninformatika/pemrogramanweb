@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Tentang Kami | HYUNDAI BATANG</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <div class="logo-icon">H</div>
+            <div class="logo-text">
+                <h1>HYUNDAI BATANG</h1>
+                <p>Your Trusted Car Dealer</p>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav-link">🏠 Home</a></li>
+                <li><a href="about.html" class="nav-link">📖 About</a></li>
+                <li><a href="inventory.html" class="nav-link">📦 Inventory</a></li>
+            </ul>
+        </nav>
+        <div class="menu-toggle" id="menuToggle">
+            <span>☰</span>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <h2>Tentang HYUNDAI BATANG</h2>
+            <p>Mitra terpercaya Anda dalam menemukan mobil impian</p>
+        </section>
+
+        <section class="about-content">
+            <div class="about-text">
+                <h3>Siapa Kami?</h3>
+                <p>HYUNDAI BATANG berdiri sejak tahun 2016 sebagai showroom mobil yang berkomitmen memberikan pengalaman terbaik dalam jual beli mobil. Kami menyediakan mobil baru dan bekas berkualitas dengan harga kompetitif.</p>
+                
+                <h3>Mengapa Memilih Kami?</h3>
+                <ul>
+                    <li>✅ Garansi 1 bulan untuk semua mobil bekas</li>
+                    <li>✅ Free cek kelayakan oleh mekanik profesional</li>
+                    <li>✅ Proses kredit mudah dengan bunga rendah</li>
+                    <li>✅ Surat-surat lengkap & legal</li>
+                    <li>✅ Test drive gratis di lokasi</li>
+                </ul>
+
+                <h3>Visi Kami</h3>
+                <p>Menjadi showroom mobil terbesar dan paling terpercaya di Batang dengan pelayanan yang ramah dan transparan.</p>
+
+                <h3>Jam Operasional</h3>
+                <p>Senin - Sabtu: 09.00 - 18.00<br>
+                Minggu & Hari Libur Nasional: Tutup</p>
+            </div>
+            <div class="about-image">
+                <img src="https://tse1.mm.bing.net/th/id/OIP.vNREk_WgyCuSi-tjvtTWMAHaHa?pid=Api&P=0&h=180" alt="HYUNDAI BATANG Showroom">
+                <p class="caption">Showroom HYUNDAI BATANG - Pelayanan ramah & profesional</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 HYUNDAI BATANG - Showroom Mobil Terpercaya | UTS Pemrograman Web</p>
+    </footer>
+
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const nav = document.querySelector('nav');
+        if (menuToggle) {
+            menuToggle.addEventListener('click', function() {
+                nav.classList.toggle('show');
+            });
+        }
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            const linkPage = link.getAttribute('href');
+            if (linkPage === currentPage) {
+                link.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>
