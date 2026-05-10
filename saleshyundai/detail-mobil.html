@@ -154,6 +154,7 @@
             font-size: 0.7rem;
             font-weight: bold;
             margin-bottom: 0.8rem;
+            margin-left: 0.5rem;
         }
 
         .price {
@@ -167,6 +168,38 @@
             font-size: 0.7rem;
             font-weight: normal;
             color: #666;
+        }
+
+        .variant-selector {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 0.8rem;
+            margin: 1rem 0;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .variant-btn {
+            padding: 0.5rem 1.2rem;
+            background: #e9ecef;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .variant-btn.active {
+            background: #003d6b;
+            color: white;
+        }
+
+        .variant-btn:hover {
+            background: #ff6b35;
+            color: white;
         }
 
         .spec-section {
@@ -378,6 +411,10 @@
             .spec-value {
                 text-align: left;
             }
+            .variant-selector {
+                flex-direction: column;
+                align-items: stretch;
+            }
         }
     </style>
 </head>
@@ -404,7 +441,8 @@
         <a href="index.html">Home</a> / <a href="inventory.html">Inventory</a> / <span id="breadcrumb-name">Detail Mobil</span>
     </div>
 
-    <div class="detail-container" id="detailContainer">        <div style="text-align:center; padding:2rem;">⏳ Memuat data mobil...</div>
+    <div class="detail-container" id="detailContainer">
+        <div style="text-align:center; padding:2rem;">⏳ Memuat data mobil...</div>
     </div>
 
     <footer>
@@ -676,26 +714,53 @@
                 kelebihan: ["Harga terjangkau", "Fitur cukup lengkap", "Kabin lega 7 penumpang", "Konsumsi BBM irit"]
             },
 
-            // STARIA 2.2D SIGNATURE
+            // HYUNDAI STARIA 2.2D SIGNATURE
             "staria-signature": {
-                name: "STARIA 2.2D SIGNATURE 9 SEAT",
+                name: "HYUNDAI STARIA 2.2D SIGNATURE",
                 year: "2026",
                 condition: "Baru",
                 price: "Rp 960.500.000",
                 image: "https://i.ibb.co.com/201dvB3z/IMG-20260509-WA0185.jpg",
+                variants: {
+                    "7 Seater": {
+                        price: "Rp 960.500.000",
+                        capacity: "7 Penumpang (Captain Seat Premium)",
+                        features: "Captain seat premium baris kedua dengan leg rest"
+                    },
+                    "9 Seater": {
+                        price: "Rp 910.000.000",
+                        capacity: "9 Penumpang (2-3-4 layout)",
+                        features: "Konfigurasi kursi 2-3-4, cocok untuk keluarga besar"
+                    }
+                },
                 specs: {
-                    "Mesin": "2.199cc Diesel",
-                    "Tenaga": "174 HP",
-                    "Kapasitas": "9 Penumpang"
+                    "Mesin": "2.2L CRDi Diesel Turbo",
+                    "Kapasitas": "2.199 cc",
+                    "Tenaga": "177 PS @ 3.800 rpm",
+                    "Torsi": "430 Nm @ 1.500-2.500 rpm",
+                    "Transmisi": "8-speed Automatic Shift-by-wire",
+                    "Penggerak": "FWD (Front Wheel Drive)",
+                    "Drive Mode": "Eco, Normal, Sport",
+                    "Panjang": "5.253 mm",
+                    "Lebar": "1.997 mm",
+                    "Tinggi": "1.990 mm",
+                    "Wheelbase": "3.273 mm",
+                    "Tangki BBM": "75 liter",
+                    "Velg": "18 Inci",
+                    "Ban": "235/55 R18"
                 },
                 features: {
-                    exterior: ["LED Headlamp", "Velg 18 Inci"],
-                    interior: ["Premium Lounge Seat", "Head Unit 10,25 Inci", "AC Digital"],
-                    safety: ["6 Airbags", "ESC", "HAC"]
+                    exterior: ["LED Headlamp & DRL", "LED Rear Combination Lamp", "Power Sliding Door", "Dual Sunroof", "Smart Power Tailgate", "Roof Rail", "Desain Futuristik Spaceship"],
+                    interior: ["Captain Seat Premium (Signature 7 Seater)", "Panoramic Window", "Ambient Mood Lamp", "Wireless Charger", "Ventilated & Heated Seat", "Hyundai Bluelink", "Shift-by-wire"],
+                    audio: ["Bose Premium Sound System 12 Speaker"],
+                    safety: ["6 Airbags", "Forward Collision Avoidance Assist", "Blind Spot Collision Avoidance", "Lane Keeping Assist", "Smart Cruise Control", "360 Camera (tergantung varian)", "ESC + HAC", "TPMS"]
                 },
-                kelebihan: ["Premium Lounge Seat", "Kapasitas 9 penumpang", "Cocok untuk keluarga besar"]
+                kelebihan: ["Kabin sangat luas & nyaman", "Suspensi empuk", "Desain futuristik seperti spaceship", "Mesin diesel bertenaga tapi halus", "Cocok untuk keluarga maupun VIP travel"]
             }
         };
+
+        // Variabel untuk menyimpan varian yang dipilih (khusus Staria)
+        let selectedVariant = "7 Seater";
 
         // Ambil ID dari URL
         function getCarId() {
@@ -720,6 +785,12 @@
 
             document.getElementById('breadcrumb-name').innerText = car.name;
 
+            // Tentukan harga berdasarkan varian (khusus Staria)
+            let currentPrice = car.price;
+            if (car.variants && carId === "staria-signature") {
+                currentPrice = car.variants[selectedVariant].price;
+            }
+
             // Generate spesifikasi
             let specHtml = '';
             for (const [key, value] of Object.entries(car.specs)) {
@@ -727,7 +798,7 @@
             }
 
             // Generate fitur
-            let exteriorHtml = '', interiorHtml = '', teknologiHtml = '', adasHtml = '', safetyHtml = '', kelebihanHtml = '';
+            let exteriorHtml = '', interiorHtml = '', teknologiHtml = '', audioHtml = '', adasHtml = '', safetyHtml = '', kelebihanHtml = '';
             
             if (car.features?.exterior && car.features.exterior.length > 0) {
                 exteriorHtml = `<div class="spec-section"><h3>✨ Eksterior</h3><div class="feature-list">${car.features.exterior.map(f => `<span class="feature-tag">${f}</span>`).join('')}</div></div>`;
@@ -739,6 +810,10 @@
             
             if (car.features?.teknologi && car.features.teknologi.length > 0) {
                 teknologiHtml = `<div class="spec-section"><h3>📱 Head Unit & Teknologi</h3><div class="feature-list">${car.features.teknologi.map(f => `<span class="feature-tag">${f}</span>`).join('')}</div></div>`;
+            }
+            
+            if (car.features?.audio && car.features.audio.length > 0) {
+                audioHtml = `<div class="spec-section"><h3>🎵 Audio System</h3><div class="feature-list">${car.features.audio.map(f => `<span class="feature-tag">${f}</span>`).join('')}</div></div>`;
             }
             
             if (car.features?.adas && car.features.adas.length > 0) {
@@ -753,12 +828,25 @@
                 kelebihanHtml = `<div class="spec-section"><h3>⭐ Kelebihan</h3><div class="feature-list">${car.kelebihan.map(f => `<span class="feature-tag kelebihan">${f}</span>`).join('')}</div></div>`;
             }
 
+            // Generate varian selector (khusus Staria)
+            let variantHtml = '';
+            if (car.variants && carId === "staria-signature") {
+                variantHtml = `
+                    <div class="variant-selector">
+                        <span style="font-weight:600;">Pilih Varian:</span>
+                        <button class="variant-btn ${selectedVariant === '7 Seater' ? 'active' : ''}" onclick="selectVariant('7 Seater')">7 Seater (Captain Seat)</button>
+                        <button class="variant-btn ${selectedVariant === '9 Seater' ? 'active' : ''}" onclick="selectVariant('9 Seater')">9 Seater (2-3-4)</button>
+                        <span style="font-size:0.75rem; color:#666;">${selectedVariant === '7 Seater' ? '✅ Kursi premium captain seat' : '✅ Kapasitas 9 penumpang'}</span>
+                    </div>
+                `;
+            }
+
             // Nomor WhatsApp
             const waNumber = "6285950830277";
-            const waMessage = `Halo HYUNDAI BATANG, saya tertarik dengan *${car.name}* (${car.year}) dengan harga *${car.price}*. Apakah masih tersedia? Saya ingin informasi lebih lanjut.`;
+            const waMessage = `Halo HYUNDAI BATANG, saya tertarik dengan *${car.name}* (${car.year})${carId === "staria-signature" ? ` varian ${selectedVariant}` : ''} dengan harga *${currentPrice}*. Apakah masih tersedia? Saya ingin informasi lebih lanjut.`;
             const waLink = `https://wa.me/${waNumber}?text=${encodeURIComponent(waMessage)}`;
             
-            const testDriveMessage = `Halo HYUNDAI BATANG, saya ingin request *Test Drive* untuk mobil *${car.name}* (${car.year}). Apakah bisa dijadwalkan?`;
+            const testDriveMessage = `Halo HYUNDAI BATANG, saya ingin request *Test Drive* untuk mobil *${car.name}* (${car.year})${carId === "staria-signature" ? ` varian ${selectedVariant}` : ''}. Apakah bisa dijadwalkan?`;
             const testDriveLink = `https://wa.me/${waNumber}?text=${encodeURIComponent(testDriveMessage)}`;
 
             document.getElementById('detailContainer').innerHTML = `
@@ -772,7 +860,8 @@
                     <h1 class="car-title">${car.name}</h1>
                     <span class="car-year">📅 ${car.year}</span>
                     <span class="car-condition">🚗 ${car.condition}</span>
-                    <div class="price">${car.price} <small>(On The Road Batang)</small></div>
+                    ${variantHtml}
+                    <div class="price">${currentPrice} <small>(On The Road Batang)</small></div>
                     
                     <div class="action-buttons">
                         <a href="${waLink}" class="btn btn-wa" target="_blank">
@@ -792,6 +881,7 @@
                 ${exteriorHtml}
                 ${interiorHtml}
                 ${teknologiHtml}
+                ${audioHtml}
                 ${adasHtml}
                 ${safetyHtml}
                 ${kelebihanHtml}
@@ -803,6 +893,12 @@
                     </a>
                 </div>
             `;
+        }
+
+        // Fungsi untuk memilih varian (khusus Staria)
+        function selectVariant(variant) {
+            selectedVariant = variant;
+            renderDetail();
         }
 
         // Menu toggle untuk mobile
@@ -833,6 +929,9 @@
                 link.classList.add('active');
             }
         });
+
+        // Expose selectVariant ke global
+        window.selectVariant = selectVariant;
 
         // Jalankan render
         renderDetail();
