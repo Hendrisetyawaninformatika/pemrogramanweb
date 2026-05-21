@@ -3,7 +3,6 @@ export default class BankAccount {
   constructor(owner) {
     this.owner = owner;
   }
-
   deposit(amount) {
     this.#balance += amount;
     console.log(`${this.owner} menabung Rp${amount}`);

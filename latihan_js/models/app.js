@@ -6,7 +6,6 @@ mhs1.greet();
 mhs1.study();
 
 const rekeningMhs = new BankAccount(mhs1.name);
-
 rekeningMhs.deposit(200000);
 rekeningMhs.withdraw(50000);
 
@@ -17,6 +16,5 @@ document.getElementById("output").innerHTML = `
 <p><strong>NIM:</strong> ${mhs1.nim}</p>
 <p><strong>Jurusan:</strong> ${mhs1.major}</p>
 <p><strong>Saldo Akhir:</strong>
-Rp${rekeningMhs.getBalance().toLocaleString("id-ID")}
-</p>
+Rp${rekeningMhs.getBalance().toLocaleString("id-ID")}</p>
 `;
