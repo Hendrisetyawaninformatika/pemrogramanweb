@@ -6,6 +6,6 @@ export default class person {
     }
 
     greet () {
-        console.log('Helo, Hendri ${this. name}, umur ${thid.age} tahun');
+        console.log('Helo, name ${this. name}, umur ${thid.age} tahun');
     }
 }
