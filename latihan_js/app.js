@@ -1,5 +1,5 @@
 import Student from "./models/Student.js";
-import BankAccount from "./models/BankAccount.js";
+import BankAccount from "./models/BankAcoount.js";
 
 const mhs1 = new Student("Hendri Setyawan", 20, "241110041", "Informatika");
 mhs1.greet();
