@@ -1,6 +1,5 @@
 export default class BankAccount {
   #balance = 0;
-
   constructor(owner) {
     this.owner = owner;
   }
@@ -9,7 +8,6 @@ export default class BankAccount {
     this.#balance += amount;
     console.log(`${this.owner} menabung Rp${amount}`);
   }
-
   withdraw(amount) {
     if (amount > this.#balance) {
       console.log("Saldo tidak cukup");
